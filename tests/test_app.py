@@ -1,11 +1,8 @@
 from app import app
 
 def test_home():
+	client = app.test_client()
+	response = client.get("/")
 
-client = app.test_client()
-
-r = client.get("/")
-
-assert r.status_code == 200
-
-assert b"Hello from CI/CD!"  / in r.data
+	assert response.status_code == 200
+	assert b"Hello from CI/CD!" in response.data
