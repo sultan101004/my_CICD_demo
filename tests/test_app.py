@@ -8,6 +8,4 @@ r = client.get("/")
 
 assert r.status_code == 200
 
-assert b"Hello from CI/CD!" \
-
-in r.data
+assert b"Hello from CI/CD!" in r.data
